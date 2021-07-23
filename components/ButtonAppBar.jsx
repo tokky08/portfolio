@@ -2,10 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  bar: {
+    color: "#000000",
+    backgroundColor: "#ffffff"
+  }
 }));
 
 export default function ButtonAppBar() {
@@ -24,26 +25,11 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            tokky08.dev
-          </Typography>
-          <Typography variant="h6" className={classes.title}>
-            About
-          </Typography>
-          {/* <Typography variant="h6" className={classes.title}>
-            Blog
-          </Typography> */}
-
-
-          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button> */}
+      <AppBar position="static" className={classes.bar}>
+        <Toolbar display="flex" p={1}>
+          <Box p={1} flexGrow={1}>tokky08.dev</Box>
+          <Box p={1}>About</Box>
+          <Box p={1}>Blog</Box>
         </Toolbar>
       </AppBar>
     </div>

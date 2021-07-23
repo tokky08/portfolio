@@ -8,20 +8,29 @@ import TimelineDot from '@material-ui/lab/TimelineDot';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
-export default function BasicTimeline() {
-    const theme = createMuiTheme({
-        overrides: {
-            MuiTimelineItem: {
-                missingOppositeContent: {
-                    '&::before': {
-                        flex: "none",
-                        padding: "0"
-                    },
+const useStyles = makeStyles({
+  typography: {
+    marginTop: "30px"
+  },
+});
+
+const theme = createMuiTheme({
+    overrides: {
+        MuiTimelineItem: {
+            missingOppositeContent: {
+                '&::before': {
+                    flex: "none",
+                    padding: "0"
                 },
             },
         },
-    });
+    },
+});
+
+export default function BasicTimeline() {
+    const classes = useStyles();
 
     const allExperiences = [
         {
@@ -63,7 +72,7 @@ export default function BasicTimeline() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Typography variant="h5" component="h2">Experience</Typography>
+            <Typography variant="h5" component="h2" className={classes.typography}>Experiences</Typography>
             <Timeline>
                 {allExperiences.map(({ date, title, comment }, index) => (
                     <TimelineItem>

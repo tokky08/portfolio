@@ -1,17 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import styles from '../styles/layout.module.scss'
+import utilStyles from '../styles/utils.module.css'
+import IconLabelTabs from './header'
+import ButtonAppBar from './ButtonAppBar'
 
 const name = 'tokky08'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'tokky08'
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/profile.png" />
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
@@ -25,7 +27,9 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      {/* <IconLabelTabs/> */}
+      <ButtonAppBar/>
+      {/* <header className={styles.header}>
         {home ? (
           <>
             <Image
@@ -59,8 +63,8 @@ export default function Layout({ children, home }) {
             </h2>
           </>
         )}
-      </header>
-      <main>{children}</main>
+      </header> */}
+      <main className={styles.main}>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">

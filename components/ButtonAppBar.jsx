@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   bar: {
-    color: "#000000",
+    color: "#000",
     backgroundColor: "#ffffff"
   }
 }));
@@ -27,9 +28,12 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static" className={classes.bar}>
         <Toolbar display="flex" p={1}>
-          <Box p={1} flexGrow={1}>tokky08.dev</Box>
-          <Box p={1}>About</Box>
-          <Box p={1}>Blog</Box>
+          <Box p={1} flexGrow={1}>
+            <Link href="/"><a>tokky08.dev</a></Link>
+          </Box>
+          <Box p={1}>
+            <Link href="blog"><a>Blog</a></Link>
+          </Box>
         </Toolbar>
       </AppBar>
     </div>

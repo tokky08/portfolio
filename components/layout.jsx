@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/layout.module.scss'
 import utilStyles from '../styles/utils.module.css'
-import IconLabelTabs from './header'
 import ButtonAppBar from './ButtonAppBar'
 
 const name = 'tokky08'

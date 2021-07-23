@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styles from '../styles/layout.module.scss'
 import utilStyles from '../styles/utils.module.css'
 import ButtonAppBar from './ButtonAppBar'
+import Footer from './Footer'
 
 const name = 'tokky08'
 export const siteTitle = 'tokky08'
@@ -71,6 +72,7 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+      <Footer/>
     </div>
   )
 }

@@ -37,6 +37,11 @@ const useStyles = makeStyles((theme) => ({
   bar: {
     color: "#000",
     backgroundColor: "#ffffff"
+  },
+  hover: {
+    '&::hover': {
+      textDecoration: "none"
+    }
   }
 }));
 
@@ -48,11 +53,11 @@ export default function Header(props) {
         <ElevationScroll {...props}>
             <AppBar className={classes.bar}>
             <Toolbar>
-                <Box p={1} flexGrow={1}>
-                    <Link href="/"><a>tokky08.dev</a></Link>
+                <Box p={1} flexGrow={1} fontSize={20}>
+                    <Link href="/"><a className={classes.hover}>tokky08.dev</a></Link>
                 </Box>
-                <Box p={1}>
-                    <Link href="/blog"><a>Blog</a></Link>
+                <Box p={1} fontSize={20}>
+                    <Link href="/blog"><a className={classes.hover}>Blog</a></Link>
                 </Box>
             </Toolbar>
             </AppBar>

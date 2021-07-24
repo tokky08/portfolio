@@ -17,7 +17,7 @@ export async function getStaticProps() {
 
 const useStyles = makeStyles((theme) => ({
   typography: {
-    margin: theme.spacing(3, 2),
+    margin: theme.spacing(3, 2, 6),
   }
 }));
 
@@ -30,7 +30,7 @@ export default function Blog({ allPostsData }) {
       </Head>
       <main className={`${styles.main} ${styles.blog}`}>
         <section>
-          <Typography variant="h5" component="h2" className={classes.typography}>
+          <Typography variant="h4" component="h2" className={classes.typography}>
             tokky08のブログ
           </Typography>
           {allPostsData.map(({ id, date, title, body }) => (

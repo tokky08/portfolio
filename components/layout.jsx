@@ -5,6 +5,7 @@ import styles from '../styles/layout.module.scss'
 import utilStyles from '../styles/utils.module.css'
 import ButtonAppBar from './ButtonAppBar'
 import Footer from './Footer'
+import ElevateAppBar from './ElevateAppBar'
 
 const name = 'tokky08'
 export const siteTitle = 'tokky08'
@@ -27,8 +28,7 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      {/* <IconLabelTabs/> */}
-      <ButtonAppBar/>
+      <ElevateAppBar />
       {/* <header className={styles.header}>
         {home ? (
           <>

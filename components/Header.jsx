@@ -1,41 +1,63 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
+import Link from 'next/link'
+import PropTypes from 'prop-types';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import PhoneIcon from '@material-ui/icons/Phone';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
 
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-    maxWidth: 500,
-  },
-});
+function ElevationScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  });
 
-export default function IconLabelTabs() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+ElevationScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
 
-  return (
-    <Paper square className={classes.root}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        variant="fullWidth"
-        indicatorColor="secondary"
-        textColor="secondary"
-        aria-label="icon label tabs example"
-      >
-        <Tab icon={<PhoneIcon />} label="RECENTS" />
-        <Tab icon={<FavoriteIcon />} label="FAVORITES" />
-        <Tab icon={<PersonPinIcon />} label="NEARBY" />
-      </Tabs>
-    </Paper>
-  );
+const useStyles = makeStyles((theme) => ({
+  bar: {
+    color: "#000",
+    backgroundColor: "#ffffff"
+  }
+}));
+
+export default function Header(props) {
+    const classes = useStyles();
+    return (
+        <React.Fragment>
+        <CssBaseline />
+        <ElevationScroll {...props}>
+            <AppBar className={classes.bar}>
+            <Toolbar>
+                <Box p={1} flexGrow={1}>
+                    <Link href="/"><a>tokky08.dev</a></Link>
+                </Box>
+                <Box p={1}>
+                    <Link href="/blog"><a>Blog</a></Link>
+                </Box>
+            </Toolbar>
+            </AppBar>
+        </ElevationScroll>
+        <Toolbar />
+        </React.Fragment>
+    );
 }

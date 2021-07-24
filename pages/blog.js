@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout, { siteTitle } from '../components/Layout'
 import { getSortedPostsData } from '../lib/posts'
 import Typography from '@material-ui/core/Typography'
-import MiddleDividers from '../components/MiddleDividers'
+import BlogCard from '../components/BlogCard'
 import { makeStyles } from '@material-ui/core/styles'
 
 export async function getStaticProps() {
@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Blog({ allPostsData }) {
-  console.log(allPostsData)
   const classes = useStyles();
   return (
     <Layout home>
@@ -33,7 +32,7 @@ export default function Blog({ allPostsData }) {
           tokky08のブログ
         </Typography>
         {allPostsData.map(({ id, date, title, body }) => (
-          <MiddleDividers
+          <BlogCard
             id={id}
             date={date}
             title={title}

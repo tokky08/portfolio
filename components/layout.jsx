@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import styles from '../styles/layout.module.scss'
 import Footer from './Footer'
-import ElevateAppBar from './ElevateAppBar'
+import Header from './Header'
+import styles from '../styles/layout.module.scss'
 
 const name = 'tokky08'
 export const siteTitle = 'tokky08'
@@ -24,7 +24,7 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <ElevateAppBar />
+      <Header/>
       <main className={styles.main}>{children}</main>
       <Footer/>
     </div>

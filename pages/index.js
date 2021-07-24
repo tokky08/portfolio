@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import OutlinedCard from '../components/OutlinedCard'
-import BasicTimeline from '../components/BasicTimeline'
-import FolderList from '../components/FolderList'
+import Layout, { siteTitle } from '../components/Layout'
+import Profile from '../components/Profile'
+import ExternalLinks from '../components/ExternalLinks'
+import Experiences from '../components/Experiences'
 
 export default function Home({ allPostsData }) {
   console.log(allPostsData)
@@ -11,9 +11,9 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <OutlinedCard />
-      <FolderList />
-      <BasicTimeline />
+      <Profile />
+      <ExternalLinks />
+      <Experiences />
     </Layout>
   )
 }

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MiddleDividers(props) {
+export default function BlogCard(props) {
   const classes = useStyles();
 
   return (

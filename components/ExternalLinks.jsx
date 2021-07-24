@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function FolderList() {
+export default function ExternalLinks() {
     const classes = useStyles();
 
     const linksList = [

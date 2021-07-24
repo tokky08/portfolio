@@ -29,7 +29,7 @@ const theme = createMuiTheme({
     },
 });
 
-export default function BasicTimeline() {
+export default function Experiences() {
     const classes = useStyles();
 
     const allExperiences = [

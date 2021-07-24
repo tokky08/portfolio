@@ -26,17 +26,15 @@ const useStyles = makeStyles({
   }
 });
 
-export default function OutlinedCard() {
+export default function Profile() {
   const classes = useStyles();
 
   return (
-    // <Card className={`${classes.root}, ${styles.card}`} variant="outlined">
     <Card className={classes.root} variant="outlined">
       <CardContent className={classes.content}>
         <Image
           priority
           src="/images/profile.png"
-          // className={utilStyles.borderCircle}
           height={144}
           width={144}
           alt={"tokky08"}

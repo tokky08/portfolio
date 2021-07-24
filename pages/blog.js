@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
-import Date from '../components/date'
+import Typography from '@material-ui/core/Typography'
+import BlogCard from '../components/BlogCard'
+import { makeStyles } from '@material-ui/core/styles'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -14,28 +14,31 @@ export async function getStaticProps() {
   }
 }
 
+const useStyles = makeStyles((theme) => ({
+  typography: {
+    margin: theme.spacing(3, 2),
+  }
+}));
+
 export default function Blog({ allPostsData }) {
-  console.log(allPostsData)
+  const classes = useStyles();
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/blog/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+      <section>
+        <Typography variant="h5" component="h2" className={classes.typography}>
+          tokky08のブログ
+        </Typography>
+        {allPostsData.map(({ id, date, title, body }) => (
+          <BlogCard
+            id={id}
+            date={date}
+            title={title}
+            body={body}
+          />
+        ))}
       </section>
     </Layout>
   )

@@ -4,6 +4,7 @@ import { getSortedPostsData } from '../lib/posts'
 import Typography from '@material-ui/core/Typography'
 import BlogCard from '../components/BlogCard'
 import { makeStyles } from '@material-ui/core/styles'
+import styles from '../styles/layout.module.scss'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -27,19 +28,21 @@ export default function Blog({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
-        <Typography variant="h5" component="h2" className={classes.typography}>
-          tokky08のブログ
-        </Typography>
-        {allPostsData.map(({ id, date, title, body }) => (
-          <BlogCard
-            id={id}
-            date={date}
-            title={title}
-            body={body}
-          />
-        ))}
-      </section>
+      <main className={`${styles.main} ${styles.blog}`}>
+        <section>
+          <Typography variant="h5" component="h2" className={classes.typography}>
+            tokky08のブログ
+          </Typography>
+          {allPostsData.map(({ id, date, title, body }) => (
+            <BlogCard
+              id={id}
+              date={date}
+              title={title}
+              body={body}
+            />
+          ))}
+        </section>
+      </main>
     </Layout>
   )
 }

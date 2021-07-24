@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/Layout'
+import Layout, { siteTitle } from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
 import Typography from '@material-ui/core/Typography'
 import BlogCard from '../components/BlogCard'

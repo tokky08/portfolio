@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/Layout'
+import Layout, { siteTitle } from '../components/layout'
 import Profile from '../components/Profile'
 import ExternalLinks from '../components/ExternalLinks'
 import Experiences from '../components/Experiences'

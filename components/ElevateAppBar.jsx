@@ -52,7 +52,7 @@ export default function ElevateAppBar(props) {
                     <Link href="/"><a>tokky08.dev</a></Link>
                 </Box>
                 <Box p={1}>
-                    <Link href="blog"><a>Blog</a></Link>
+                    <Link href="/blog"><a>Blog</a></Link>
                 </Box>
             </Toolbar>
             </AppBar>

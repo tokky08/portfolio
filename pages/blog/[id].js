@@ -1,13 +1,15 @@
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
+import styles from '../../styles/layout.module.scss'
 
 export default function Post({ postData }) {
   return (
     <Layout>
         <Head>
             <title>{postData.title}</title>
-        </Head>
+      </Head>
+      <main className={`${styles.main} ${styles.blog}`}>
         <article>
             <h1>{postData.title}</h1>
             <div>
@@ -15,6 +17,7 @@ export default function Post({ postData }) {
             </div>
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
+      </main>
     </Layout>
   )
 }

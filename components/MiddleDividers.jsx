@@ -51,8 +51,7 @@ export default function MiddleDividers(props) {
           {props.date}
         </Typography>
         <Typography color="textSecondary" variant="body2">
-          Pinstriped cornflower blue cotton blouse takes you on a walk to the park or just down the
-          hall.
+          {props.body}
         </Typography>
       </div>
       <Divider variant="middle" />

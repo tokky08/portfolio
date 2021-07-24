@@ -28,11 +28,12 @@ export default function Blog({ allPostsData }) {
         <Typography variant="h5" component="h2">
           tokky08のブログ
         </Typography>
-        {allPostsData.map(({ id, date, title }) => (
+        {allPostsData.map(({ id, date, title, body }) => (
           <MiddleDividers
             id={id}
             date={date}
             title={title}
+            body={body}
           />
         ))}
       </section>

@@ -26,7 +26,7 @@ export default function Blog({ allPostsData }) {
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{siteTitle} | ブログ</title>
       </Head>
       <main className={`${styles.main} ${styles.blog}`}>
         <section>

@@ -58,16 +58,6 @@ export default function Experiences() {
             title: "ヤフー株式会社",
             comment: "内定者限定のハッカソン。レストランが決まらない時に使うwebサービスを開発。Flask, React, GCPを使用。"
         },
-        {
-            date: "2022.03",
-            title: "京都産業大学",
-            comment: "学部で卒業予定。"
-        },
-        {
-            date: "2022.04",
-            title: "ヤフー株式会社",
-            comment: "新卒入社予定。"
-        },
     ]
 
     return (

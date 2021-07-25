@@ -43,7 +43,7 @@ export default function ExternalLinks() {
             primary: "note"
         },
         {
-            href: "https://www.wantedly.com/id/tokky08",
+            href: "https://wantedly.com/id/tokky08",
             icon: <Image priority src="/images/wantedly.png" height={40} width={40} alt={"Wantedly"} />,
             primary: "Wantedly"
         }

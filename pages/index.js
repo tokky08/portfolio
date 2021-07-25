@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{siteTitle} | ポートフォリオ</title>
       </Head>
       <main className={`${styles.main} ${styles.index}`}>
         <Profile />

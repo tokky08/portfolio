@@ -1,4 +1,4 @@
-import Layout from '../../components/layout'
+import Layout, { siteTitle } from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import styles from '../../styles/layout.module.scss'
@@ -6,8 +6,8 @@ import styles from '../../styles/layout.module.scss'
 export default function Post({ postData }) {
   return (
     <Layout>
-        <Head>
-            <title>{postData.title}</title>
+      <Head>
+        <title>{postData.title} | {siteTitle}のブログ</title>
       </Head>
       <main className={`${styles.main} ${styles.blog}`}>
         <article>

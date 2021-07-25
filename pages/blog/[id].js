@@ -1,14 +1,19 @@
-import Layout, { siteTitle } from '../../components/layout'
+import Layout from '../../components/layout'
+import Seo from '../../components/Seo'
 import { getAllPostIds, getPostData } from '../../lib/posts'
-import Head from 'next/head'
 import styles from '../../styles/layout.module.scss'
 
 export default function Post({ postData }) {
   return (
     <Layout>
-      <Head>
-        <title>{postData.title} | {siteTitle}のブログ</title>
-      </Head>
+      <Seo
+        title={`${postData.title} | tokky08のブログ`}
+        description={`どうも、tokky08です。こちらはtokky08のブログです。今回は、${postData.title}について書きました。`}
+        ogpUrl={`https://tokky08.dev/blog/${postData.id}`}
+        ogpType="article"
+        ogpTitle={`${postData.title} | tokky08のブログ`}
+        ogpDescription={`tokky08のブログです。今回は、${postData.title}について書きました。`}
+      />
       <main className={`${styles.main} ${styles.blog}`}>
         <article>
             <h1>{postData.title}</h1>

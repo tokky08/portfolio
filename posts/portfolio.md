@@ -10,14 +10,14 @@ date: '2020-07-25'
 **[GitHub](https://github.com/tokky08/portfolio)**
 
 ## 昔のポートフォリオ 
-https://tokky08.github.io
+[https://tokky08.github.io](https://tokky08.github.io)
  - HTML
  - CSS（Sass）
  - JavaScript（jQuery）
  - GitHub Pages
 
 ## 作り直したポートフォリオ 
-https://tokky08.dev
+[https://tokky08.dev](https://tokky08.dev)
  - React
  - Material UI
  - Next.js

@@ -34,7 +34,7 @@ export default function Layout({ children, home }) {
         <meta property="og:title" content="ポートフォリオ | tokky08" />
         <meta property="og:description" content="tokky08のポートフォリオです" />
         <meta property="og:site_name" content="tokky08.dev" />
-        <meta property="og:image" content={"https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/marinya.png"} />
+        <meta property="og:image" content={"https://avatars.githubusercontent.com/u/53991600"} />
     
       </Head>
       <Header/>

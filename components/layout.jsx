@@ -26,14 +26,16 @@ export default function Layout({ children, home }) {
         <meta name="twitter:site" content="@tokky08" /> */}
         <meta name="keywords" content="ポートフォリオ,エンジニア,tokky08,とっきー," />
 
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@tokky08" />
+
         <meta property="og:url" content="https://tokky08.dev"/>
         <meta property="og:type" content="website" />
         <meta property="og:title" content="ポートフォリオ | tokky08" />
         <meta property="og:description" content="tokky08のポートフォリオです" />
         <meta property="og:site_name" content="tokky08.dev" />
-        <meta property="og:image" content={"https://pbs.twimg.com/profile_images/1343388061653106689/G7r2wNV8_400x400.png"} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@tokky08" />
+        <meta property="og:image" content={"https://images.microcms-assets.io/protected/ap-northeast-1:7b46820b-9e1b-4aab-ba38-e994b4176f3c/service/marina/media/marinya.png"} />
+    
       </Head>
       <Header/>
       {children}

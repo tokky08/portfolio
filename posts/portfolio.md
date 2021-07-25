@@ -29,6 +29,7 @@ SSG、Dynamic Routingは神。
 単純にReactのコンポーネント機能は使い心地が良いし、Materila UIでそれっぽく良い感じにできるので好きです。それと、初めてドメインを取りました。（tokky08.dev）
 
 ## 今後やりたいこと
+ - ページネーション機能 
  - microCMSの導入
  - タグ検索
  - TypeScriptへの書き換え

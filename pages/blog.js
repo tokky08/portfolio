@@ -4,16 +4,29 @@ import BlogCard from '../components/BlogCard'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../styles/layout.module.scss'
-import { getSortedPostsData } from '../lib/posts'
+// import { getSortedPostsData } from '../lib/posts'
+import { client } from '../lib/client'
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+// export async function getStaticProps() {
+//   const allPostsData = getSortedPostsData()
+//   return {
+//     props: {
+//       allPostsData
+//     }
+//   }
+// }
+
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "blog" });
+  console.log(data)
+  const allPostsData = data.contents
+
   return {
     props: {
       allPostsData
-    }
-  }
-}
+    },
+  };
+};
 
 const useStyles = makeStyles((theme) => ({
   typography: {
@@ -39,12 +52,12 @@ export default function Blog({ allPostsData }) {
           <Typography variant="h4" component="h2" className={classes.typography}>
             tokky08のブログ
           </Typography>
-          {allPostsData.map(({ id, date, title, body }) => (
+          {allPostsData.map(({ id, createdAt, title, body }) => (
             <BlogCard
               id={id}
-              date={date}
+              date={createdAt.slice(0, 10)}
               title={title}
-              body={body}
+              body={body.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'').slice(0, 100) + "..."}
             />
           ))}
         </section>

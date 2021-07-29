@@ -5,7 +5,7 @@ import styles from '../../styles/layout.module.scss'
 import { client } from '../../lib/client'
 import cheerio from 'cheerio'
 import hljs from 'highlight.js'
-
+import 'highlight.js/styles/night-owl.css'
 
 export default function Post({ postData, highlightedBody }) {
   return (

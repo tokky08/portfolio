@@ -3,9 +3,11 @@ import Seo from '../../components/Seo'
 // import { getAllPostIds, getPostData } from '../../lib/posts'
 import styles from '../../styles/layout.module.scss'
 import { client } from '../../lib/client'
+import cheerio from 'cheerio'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/night-owl.css'
 
-
-export default function Post({ postData }) {
+export default function Post({ postData, highlightedBody }) {
   return (
     <Layout>
       <Seo
@@ -24,7 +26,8 @@ export default function Post({ postData }) {
               {postData.createdAt.slice(0, 10)}
             </div>
             {/* <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> */}
-            <div dangerouslySetInnerHTML={{ __html: `${postData.body}` }} />
+            {/* <div dangerouslySetInnerHTML={{ __html: `${postData.body}` }} /> */}
+            <div dangerouslySetInnerHTML={{ __html: `${highlightedBody}` }} />
         </article>
       </main>
     </Layout>
@@ -62,9 +65,19 @@ export const getStaticProps = async (context) => {
   const id = context.params.id;
   const postData = await client.get({ endpoint: "blog", contentId: id });
 
+  const $ = cheerio.load(postData.body)
+
+  $('pre code').each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text())
+    $(elm).html(result.value)
+    $(elm).addClass('hljs')
+  })
+
+
   return {
     props: {
-      postData
+      postData,
+      highlightedBody:$.html()
     },
   };
 };

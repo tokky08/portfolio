@@ -21,6 +21,7 @@ export default function TagSelect(props) {
         >
           <MenuItem value={"ALL"}>ALL</MenuItem>
           <MenuItem value={"技術"}>技術</MenuItem>
+          <MenuItem value={"趣味"}>趣味</MenuItem>
           <MenuItem value={"お気持ち"}>お気持ち</MenuItem>
         </Select>
       </FormControl>

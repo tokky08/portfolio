@@ -39,12 +39,12 @@ export default function BlogCard(props) {
           </Grid>
         </Grid>
         <Typography gutterBottom variant="body1">
-          {props.date}
+          {props.date}　#{props.tag}
         </Typography>
         <Typography color="textSecondary" variant="body2">
           {props.body}
         </Typography>
-      </div>
+        </div>
       <Divider variant="middle" />
     </div>
   );

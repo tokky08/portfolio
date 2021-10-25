@@ -2,12 +2,12 @@ import { useState } from "react"
 import Layout from '../components/layout'
 import Seo from '../components/Seo'
 import BlogCard from '../components/BlogCard'
-import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../styles/layout.module.scss'
 // import { getSortedPostsData } from '../lib/posts'
 import { client } from '../lib/client'
 import TagSelect from '../components/TagSelect'
+import Box from '@material-ui/core/Box'
 
 // export async function getStaticProps() {
 //   const allPostsData = getSortedPostsData()
@@ -52,10 +52,10 @@ export default function Blog({ allPostsData }) {
       />
       <main className={`${styles.main} ${styles.blog}`}>
         <section>
-          <Typography variant="h4" component="h2" className={classes.typography}>
-            tokky08のブログ
-          </Typography>
-          <TagSelect setTag={setTag} tag={tagSelect} />
+          <Box display="flex" justifyContent="space-between" className={classes.typography}>
+            <h2>tokky08のブログ</h2>
+            <TagSelect setTag={setTag} tag={tagSelect} />
+          </Box>
           {tagSelect == "ALL" ?
             allPostsData.map(({ id, createdAt, title, body, tag }) => (
               <BlogCard

@@ -17,6 +17,7 @@ export default function Post({ postData, highlightedBody }) {
         ogpType="article"
         ogpTitle={`${postData.title} | tokky08のブログ`}
         ogpDescription={`tokky08のブログです。今回は、${postData.title}について書きました。`}
+        ogpImage={postData.title}
       />
       <main className={`${styles.main} ${styles.blog}`}>
         <article>

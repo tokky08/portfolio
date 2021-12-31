@@ -28,7 +28,7 @@ export default function BlogCard(props) {
 
   return (
     <div className={classes.root}>
-        <div className={classes.section1}>
+      <div className={classes.section1}>
         <Grid container alignItems="center">
           <Grid item xs>
             <Typography gutterBottom variant="h5">
@@ -44,7 +44,7 @@ export default function BlogCard(props) {
         <Typography color="textSecondary" variant="body2">
           {props.body}
         </Typography>
-        </div>
+      </div>
       <Divider variant="middle" />
     </div>
   );

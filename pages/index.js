@@ -15,6 +15,7 @@ export default function Home() {
         ogpType="website"
         ogpTitle="ポートフォリオ | tokky08"
         ogpDescription="tokky08のポートフォリオです"
+        ogpImage="tokky08のサイト"
       />
       <main className={`${styles.main} ${styles.index}`}>
         <Profile />

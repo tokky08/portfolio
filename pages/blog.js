@@ -49,6 +49,7 @@ export default function Blog({ allPostsData }) {
         ogpType="article"
         ogpTitle="ブログ | tokky08"
         ogpDescription="tokky08のブログです"
+        ogpImage="tokky08のblog"
       />
       <main className={`${styles.main} ${styles.blog}`}>
         <section>

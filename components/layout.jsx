@@ -12,7 +12,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@tokky08" />
         <meta property="og:site_name" content="tokky08.dev" />
-        <meta property="og:image" content={"https://dotup.org/uploda/dotup.org2544407.png"} />
+        <meta property="og:image" content={"https://res.cloudinary.com/dq0hxcd37/image/upload/l_text:Sawarabi%20Gothic_50_bold:tokky08のポートフォリオ,co_rgb:333,w_500,c_fit/v1640957494/ogp_tokky08_pfsnkl.png"} />
       </Head>
       <Header/>
       {children}
